@@ -1,0 +1,33 @@
+# 百度智能云 API 配置
+# 获取地址: https://cloud.baidu.com/doc/ANTIFRAUD/s/4k3h7v1qo
+
+# 步骤1: 在百度智能云创建应用，获取以下凭证
+baidu:
+  # API Key (客户端ID)
+  api_key: "YOUR_API_KEY_HERE"
+  
+  # Secret Key (客户端密钥)
+  secret_key: "YOUR_SECRET_KEY_HERE"
+  
+  # Access Token (通过API Key和Secret Key获取，有效期30天)
+  access_token: "YOUR_ACCESS_TOKEN_HERE"
+  
+  # Token过期时间戳 (用于自动刷新)
+  token_expires_at: 0
+
+# 服务 endpoints
+endpoints:
+  # OAuth2.0 获取Token
+  auth: "https://aip.baidubce.com/oauth/2.0/token"
+  
+  # 文本内容审核
+  text_censor: "https://aip.baidubce.com/rest/2.0/solution/v1/text_censor/v2/user_defined"
+  
+  # 文本反诈 (如可用)
+  anti_fraud: "https://aip.baidubce.com/api/v1/solution/anti_fraud/text"
+
+# 配置说明
+# 1. 先访问 https://cloud.baidu.com 注册账号
+# 2. 进入控制台 → 内容审核 → 创建应用
+# 3. 将获取的 API Key 和 Secret Key 填入上方
+# 4. 运行 scripts/get_baidu_token.py 获取 Access Token
